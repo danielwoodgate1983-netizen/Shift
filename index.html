@@ -1226,7 +1226,7 @@ async function boot(){
   $('.cap').innerHTML=[['task','plus','Task'],['note','notes','Note'],['photo','camera','Photo'],['voice','mic','Voice']].map(c=>'<button data-act="cap" data-k="'+c[0]+'" aria-label="Capture '+c[2].toLowerCase()+'"'+(c[0]==='task'?' class="tk"':'')+'>'+ic(c[1],18)+'<span>'+c[2]+'</span></button>').join('');
   $('#side-brand').innerHTML='<span class="mark">'+ic('check',16)+'</span>Shift';
   render();
-  initMedia();
+//  initMedia();
 }
 boot();
 })();
