@@ -1219,7 +1219,22 @@ function calDayItems(d){
   if(ev.tasks.length)o+=ev.tasks.map(x=>taskRow(x)).join('');
   return o||'<div class="empty">Nothing scheduled.</div>';
 }
-
+function startOwn(){
+  const name = $('#w_name').value.trim();
+  if(!name){ $('#w_name').focus(); return; }
+  S.profile = { name, email: $('#w_email').value.trim(), role: $('#w_role').value };
+  S.signedIn = true;
+  S.sample = false;
+  save();
+  render();
+}
+function startSample(){
+  S.profile = { name: 'Daniel Woodgate', email: 'dan@example.co.uk', role: 'Project Manager' };
+  S.signedIn = true;
+  applySample();
+  save();
+  render();
+}
 /* ----- boot ----- */
 async function boot(){
   S = await loadState();
